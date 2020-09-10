@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FitnessApp.Data.Domain.Exercises>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dayoftheweek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Startweight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Goalweight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Startset)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Goalset)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Startrep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Goalrep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maxonerep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workout)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dayoftheweek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Startweight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Goalweight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Startset)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Goalset)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Startrep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Goalrep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maxonerep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workout.Workoutname)
+            </td>
+            <td>
+                <button class="btn-danger" asp-action="Edit" asp-route-id="@item.Exerciseid">Edit</button>
+                <button class="btn-warning" asp-action="Delete" asp-route-id="@item.Exerciseid">Delete</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

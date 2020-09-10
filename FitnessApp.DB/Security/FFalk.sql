@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [FFalk]
+    WITH PASSWORD = N'zEZ3zsxarM}cdgiE;rbvmokVmsFT7_&#$!~<c%Ppda=yehdm', SID = 0xE54AA178896A0A48B0635D5013FACFA4, DEFAULT_DATABASE = [AP], DEFAULT_LANGUAGE = [us_english];
+

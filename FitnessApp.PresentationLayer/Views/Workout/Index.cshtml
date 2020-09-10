@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FitnessApp.Data.Domain.Workouts>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Workoutname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workouttype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BodyPart)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workoutname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workouttype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyPart)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Workoutid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Workoutid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Workoutid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
